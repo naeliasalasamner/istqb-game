@@ -23,6 +23,11 @@ class Settings(BaseSettings):
 
     # Database — SQLite for local dev; overridden in production
     database_url: str = "sqlite:///./istqb_game.db"
+    
+    # Authentication
+    secret_key: str = "dev-secret-change-me-in-production"
+    algorithm: str = "HS256"
+    access_token_expire_minutes: int = 30
 
 
 settings = Settings()
